@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Service Center | Meteorology Station 7</title>
+    <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-[#080d1a] text-cyan-300 min-h-screen flex flex-col justify-between selection:bg-cyan-500/20 selection:text-white">
+
+    <!-- Header info panel -->
+    <header class="border-b border-cyan-950/80 bg-[#0c1224] px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs code-font">
+            <span class="text-cyan-750 font-bold">METEOROLOGY_STATION_7</span>
+            <div class="text-teal-400 font-bold uppercase">SATELLITE SYNC ACTIVE</div>
+        </div>
+    </header>
+
+    <!-- Meteorology Main Card -->
+    <main class="max-w-md mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
+        <div class="bg-gradient-to-b from-[#0e162d] to-[#0a0f20] border border-cyan-900/40 p-8 rounded-3xl space-y-6 relative shadow-[0_0_30px_rgba(6,182,212,0.05)]">
+            
+            <div class="space-y-2 text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-950/30 border border-cyan-800/20 text-cyan-400 text-2xl">
+                    🛰️
+                </div>
+                <!-- Clicking the glowing sun emoji "☀️" redirects directly to trail8.html! -->
+                <h1 class="text-xl font-bold tracking-tight text-white flex items-center justify-center gap-1.5 pt-2">
+                    Atmospheric Telemetry Grid 
+                    <a href="trail8.html" class="inline-block hover:scale-130 transition-transform active:scale-95 text-amber-400 select-none animate-pulse" title="Trigger Invoice Connection Pipeline">☀️</a>
+                </h1>
+                <p class="text-[10px] text-cyan-600 font-mono uppercase tracking-wider">Node Position: SATELLITE_LINK_07 / ACTIVE</p>
+            </div>
+
+            <!-- Meteorological stats grid (All these options are dead trap loops!) -->
+            <div class="grid grid-cols-2 gap-3 pt-2 text-center text-xs">
+                <a href="start.html?trap=trail7_temp" class="bg-cyan-950/20 border border-cyan-900/30 hover:bg-cyan-950/40 p-3 rounded-2xl transition-all">
+                    <span class="text-cyan-600 block text-[10px] font-mono tracking-wider">PRESSURE</span>
+                    <span class="text-slate-200 font-bold">1013.25 hPa</span>
+                </a>
+                <a href="start.html?trap=trail7_wind" class="bg-cyan-950/20 border border-cyan-900/30 hover:bg-cyan-950/40 p-3 rounded-2xl transition-all">
+                    <span class="text-cyan-600 block text-[10px] font-mono tracking-wider">WIND RANGE</span>
+                    <span class="text-slate-200 font-bold">12.4 knots</span>
+                </a>
+            </div>
+
+            <!-- Interception warning note -->
+            <div class="bg-cyan-950/10 border border-cyan-900/40 p-4 rounded-2xl text-xs space-y-1.5">
+                <span class="text-amber-500 font-bold flex items-center gap-1">
+                    ⚠️ CRITICAL SYSTEM ALARM NOTICE
+                </span>
+                <p class="text-slate-350 leading-relaxed font-light">
+                    Sensors detect anomalous pressure registers on downstream server nodes. To route past the warning flags, authenticate system billing logs and terms directly.
+                </p>
+                <!-- TRAP ROUTE Bypasses loops back to middle error node -->
+                <a href="middle.html" class="block text-center rounded-lg bg-cyan-950 hover:bg-cyan-900/50 text-cyan-400 border border-cyan-900/40 py-2.5 mt-2 transition-all text-[10px] uppercase font-bold tracking-widest active:scale-95">
+                    ⚙️ Bypass Telemetry Sensors &amp; Restart
+                </a>
+            </div>
+
+            <!-- Clue box descriptor -->
+            <div class="border border-cyan-900/25 bg-[#0e162f]/40 p-4 rounded-xl text-xs space-y-1">
+                <span class="block text-cyan-400 font-bold">💡 Climate Hints:</span>
+                <p class="text-slate-500 leading-relaxed font-light">
+                    All meteorological stats columns and the bypass button are trapped. Find the animated **yellow sun symbol (☀️)** in the telemetry card title bar and click it to link with the secure billing node 8!
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-950/50 bg-[#080d1a]/60 p-4 text-center text-xs text-cyan-800">
+        <p class="code-font">// DIAGNOSTICS: STABLE // SAT_ID_7</p>
+    </footer>
+</body>
+</html>

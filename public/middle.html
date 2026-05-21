@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Restart Status | Gateway Code 404</title>
+    <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom diagonal watermark pattern background layout */
+        .watermark-bg {
+            background-image: repeating-linear-gradient(-45deg, rgba(99, 102, 241, 0.03) 0px, rgba(99, 102, 241, 0.03) 2px, transparent 2px, transparent 40px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-300 min-h-screen flex flex-col justify-between selection:bg-indigo-500/20 selection:text-white watermark-bg">
+
+    <!-- Header info panel -->
+    <header class="border-b border-slate-900 bg-slate-950/80 px-6 py-4 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs code-font">
+            <span class="text-white font-bold tracking-wider">GATEWAY CONTROLLER // APIGW_404</span>
+            <div class="flex items-center space-x-2 text-rose-500">
+                <span class="h-1.5 w-1.5 rounded-full bg-rose-500 animate-ping"></span>
+                <span>STATUS: INTERR_ROUTE_TIMEOUT</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Center Module -->
+    <main class="max-w-xl mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full relative">
+        
+        <!-- Faint absolute background code text highlighting diagnostic hint target path -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-auto z-0 select-none">
+            <div class="rotate-12 select-none pointer-events-auto translate-y-36 text-center">
+                <p class="text-[10px] font-mono tracking-widest text-[#6366f1] mb-1 uppercase font-bold">Diagnostics Route Identifier</p>
+                <!-- Clue is fully visible in browser inspection or contrast adjustments, click redirects to trail3.html -->
+                <a href="trail3.html" class="text-xl md:text-2xl font-bold font-mono tracking-widest text-indigo-400 hover:text-indigo-300 underline pointer-events-auto cursor-pointer select-none">
+                    PATH_LEADS_TO_TRAIL3.HTML
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-slate-900/40 border border-slate-800/80 p-8 rounded-3xl space-y-8 relative overflow-hidden backdrop-blur-sm z-10 shadow-2xl">
+            
+            <div class="space-y-2 text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-rose-500 border border-slate-800 shadow-inner">
+                    ⚡
+                </div>
+                <h1 class="text-xl font-bold tracking-tight text-white pt-2">Offline Redirection Pipeline Exception</h1>
+                <p class="text-xs text-rose-500/80 code-font">ERR_CONNECTION_REFUSED_RESTART -> DIRECT_ROUTE_MISSING</p>
+            </div>
+
+            <!-- Fake Logging Screen carrying clue descriptions -->
+            <div class="bg-slate-950 border border-slate-900 p-5 rounded-2xl text-xs space-y-2.5 leading-relaxed font-mono">
+                <div class="text-indigo-400 font-bold uppercase tracking-wider text-[10px] pb-1 border-b border-slate-900">System Trace Log Dump</div>
+                <p class="text-slate-500">[00:01:42] Handshake ping sent directly to CDN host index... FAIL</p>
+                <p class="text-slate-400">[00:01:43] Request routed to internal port mapper proxy...</p>
+                <p class="text-slate-400">[00:01:43] Resolving host configuration index pointers...</p>
+                <p class="text-slate-300">
+                    [00:01:44] Internal routing system identified a disconnected loop inside the centralized <a href="trail3.html" class="text-indigo-400 font-bold underline hover:text-indigo-300">balancer</a> node metrics tracker logic. Please verify.
+                </p>
+            </div>
+
+            <!-- Visual Warning Box -->
+            <div class="border border-slate-800/80 bg-slate-950/20 p-4 rounded-xl text-xs space-y-1.5">
+                <span class="block text-slate-400 font-bold">🔍 Hint from Diagnostics:</span>
+                <p class="text-slate-500 leading-relaxed font-light">
+                    Traditional automatic time redirection is suspended. Find and click either the diagnostic <strong class="text-slate-400">watermark path</strong> or the faulty <strong class="text-slate-400">load-balancing node moniker</strong> inside the trace log dump to step forward safely.
+                </p>
+            </div>
+
+            <!-- TRAP BUTTON: Deceptive bypass button loops back to start.html?trap=middle_skip -->
+            <div class="pt-2">
+                <a href="start.html?trap=middle_skip" class="w-full inline-flex justify-center items-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-3.5 text-xs font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95">
+                    Skip Connection Restart &amp; Sync Cache
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950/40 p-4 text-center text-xs text-slate-600">
+        <p class="code-font">// HOST_STATUS: 127.0.0.1 // BYPASS TERMINATION DETECTED</p>
+    </footer>
+</body>
+</html>

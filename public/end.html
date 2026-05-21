@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway Decrypted - CTF Success</title>
+    <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+        }
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        .scanline {
+            animation: scanline 8s linear infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+        .terminal-pulse {
+            animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#05070c] text-emerald-400 min-h-full flex flex-col justify-between relative overflow-hidden selection:bg-emerald-500/30">
+
+    <!-- CRITICAL: Subtle Scanline/Terminal effect -->
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/[0.02] to-transparent scanline z-20"></div>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)] z-10"></div>
+
+    <!-- Header info panel -->
+    <header class="border-b border-emerald-950/60 bg-[#080d15]/85 px-6 py-4 z-30">
+        <div class="max-w-5xl mx-auto flex justify-between items-center text-xs tracking-wider">
+            <div class="flex items-center space-x-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-500 terminal-pulse"></span>
+                <span class="font-bold text-white uppercase">Decryption Console</span>
+            </div>
+            <div class="text-emerald-600/80">SYSTEM_NODE_ACK // PORT_ACTIVE</div>
+        </div>
+    </header>
+
+    <!-- Main Cryptographic Terminal Decrypting Sequence -->
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-12 z-30 relative w-full">
+        <div class="max-w-xl w-full space-y-8 bg-[#080c14]/90 border border-emerald-900/40 p-8 rounded-2xl shadow-[0_0_50px_rgba(16,185,129,0.1)] relative overflow-hidden">
+            
+            <!-- Terminal title design bar -->
+            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-400 to-emerald-600"></div>
+
+            <!-- Terminal Decrypt Loader State (Simulated) -->
+            <div id="loading-state" class="space-y-6">
+                <div class="space-y-2">
+                    <p class="text-xs text-emerald-600 flex items-center gap-1.5 font-bold">
+                        <span>[+]</span> INCOMING HOPS VERIFIED
+                    </p>
+                    <p class="text-base text-slate-300">Evaluating Redirection Integrity...</p>
+                </div>
+                
+                <div class="bg-[#04060b] border border-emerald-950 p-4 rounded-lg space-y-2 text-xs text-emerald-500/95 leading-relaxed overflow-x-auto selection:text-white max-h-56 overflow-y-auto">
+                    <div>$ tracepath --complete -n start.html</div>
+                    <div class="text-emerald-800">Route resolution logs:</div>
+                    <div class="text-emerald-750 font-bold ml-2">Hop 1: [start.html] -> Origin web design [OK]</div>
+                    <div class="text-emerald-750 font-bold ml-2">Hop 2: [middle.html] -> Proxy 404 handler [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 3: [trail3.html] -> Seeker portal index [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 4: [trail4.html] -> Bio nomad profile [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 5: [trail5.html] -> Retro terminal console [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 6: [trail6.html] -> Grandma's kitchen [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 7: [trail7.html] -> Weather metrics station [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 8: [trail8.html] -> Billing checkout [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 9: [trail9.html] -> Uptime status dashboard [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 10: [trail10.html] -> Aegis chat simulation [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 11: [trail11.html] -> Chapter XI text archive [OK]</div>
+                    <div class="text-emerald-600/70 ml-2">Hop 12: [trail12.html] -> OS system updates patch [OK]</div>
+                    <div class="text-emerald-500 ml-2">Hop 13: [end.html] -> Gateway secure decryption [RESOLVING...]</div>
+                    
+                    <div class="mt-2 text-white flex items-center gap-2">
+                        <span id="loading-spinner" class="inline-block animate-spin">⚡</span> <span id="log-text">Initializing digital key exchange...</span>
+                    </div>
+                </div>
+
+                <!-- Simulation bar -->
+                <div class="space-y-2">
+                    <div id="load-status" class="text-xs text-right text-emerald-600">DECRYPTING CODES: 0%</div>
+                    <div class="w-full bg-emerald-950/40 rounded-full h-2 overflow-hidden border border-emerald-950">
+                        <div id="decrypt-progress" class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decryption Success State (Hidden initially, shown by JS) -->
+            <div id="success-state" class="hidden space-y-8 text-center animate-[fadeIn_0.5s_ease-out]">
+                
+                <!-- Success icon banner -->
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                    <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                    </svg>
+                </div>
+
+                <div class="space-y-2">
+                    <h2 class="text-2xl font-bold tracking-tight text-white uppercase">Decryption Complete</h2>
+                    <p class="text-sm text-slate-400">Congratulations. You successfully integrated the 13-node redirect labyrinth checkpoints!</p>
+                </div>
+
+                <!-- Display Flag block of actual text -->
+                <div class="relative bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-5 overflow-hidden group shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+                    <div class="absolute top-2 left-3 text-emerald-800 text-[10px] uppercase font-bold tracking-widest">Decrypted Flag</div>
+                    <div class="absolute top-2 right-3 text-emerald-800 text-[10px] uppercase font-bold tracking-widest select-none">SHA_MATCH</div>
+                    
+                    <div class="mt-4 text-emerald-300 font-bold text-lg md:text-xl font-mono tracking-wide break-all py-2 selection:bg-emerald-500 selection:text-black">
+                        FLAG{y0u_followed_th3_tra1l}
+                    </div>
+                </div>
+
+                <!-- Success tracking table links -->
+                <div class="divide-y divide-emerald-950/40 border border-emerald-950/60 p-4 rounded-xl bg-[#04060a] text-xs text-left text-slate-400 space-y-2.5">
+                    <div class="flex justify-between items-center pb-2">
+                        <span>Checkpoints Traversed:</span>
+                        <span class="text-emerald-400 font-bold">13 / 13 Hops Completed</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 pb-2">
+                        <span>Origin Gateway (start.html):</span>
+                        <span class="text-emerald-600 font-mono">Blogs Hops Route</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 pb-2">
+                        <span>Terminal Gateway (trail12.html):</span>
+                        <span class="text-emerald-600 font-mono">Installing updates patch</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2">
+                        <span>Current Security Level:</span>
+                        <span class="text-emerald-500 font-bold">[!] FLAG DISPATCHED SUCCESSFULLY</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="start.html" class="flex-1 inline-flex justify-center items-center rounded-xl bg-emerald-950/30 hover:bg-emerald-950/50 border border-emerald-900/60 px-4 py-3 text-xs font-semibold text-emerald-300 uppercase font-mono transition-all">
+                        Reset Labyrinth Loops
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-emerald-950/60 bg-[#04070a]/60 px-6 py-4 z-30 text-center">
+        <p class="text-[10px] text-emerald-700 font-bold">
+            GATEWAY_AUTHORIZED // ENCRYPT_AES_256_GCM // SEC_REV_0x2
+        </p>
+    </footer>
+
+    <!-- Simulated code resolver -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const decryptProgress = document.getElementById('decrypt-progress');
+            const loadStatus = document.getElementById('load-status');
+            const logText = document.getElementById('log-text');
+            const loadingState = document.getElementById('loading-state');
+            const successState = document.getElementById('success-state');
+
+            const logs = [
+                "Initializing sequence handshakes...",
+                "Retrieving original trace headers...",
+                "Decoding start.html hops mapping...",
+                "Authenticating middle.html session state...",
+                "Querying Seeker index for trail3.html registers...",
+                "Matching Bio credentials on trail4.html...",
+                "Querying Command console on trail5.html node...",
+                "Preheating Grandma's Apple Pie oven on trail6.html...",
+                "Acquiring meteorological pressure indexes on trail7.html...",
+                "Authenticating invoice details on trail8.html...",
+                "Reviewing live latency status values on trail9.html...",
+                "Transcribing conversational dialog on trail10.html...",
+                "Filing Chapter XI text archive indexes on trail11.html...",
+                "Installing central patch update 1.12.0 on trail12.html...",
+                "Unlocking final encrypted flag payload blocks..."
+            ];
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 6) + 2;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    decryptProgress.style.width = '100%';
+                    loadStatus.textContent = "DECRYPTING CODES: 100%";
+                    setTimeout(() => {
+                        loadingState.classList.add('hidden');
+                        successState.classList.remove('hidden');
+                    }, 400);
+                } else {
+                    decryptProgress.style.width = `${progress}%`;
+                    loadStatus.textContent = `DECRYPTING CODES: ${progress}%`;
+                    
+                    // Rotate log statements sequentially as progress updates
+                    const logIndex = Math.floor((progress / 100) * logs.length);
+                    if (logs[logIndex]) {
+                        logText.textContent = logs[logIndex];
+                    }
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

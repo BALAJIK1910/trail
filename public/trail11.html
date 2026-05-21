@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive Reader | Historic Document Collection 11</title>
+    <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+        }
+        .serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#faf6ee] text-[#2c1f15] min-h-screen flex flex-col justify-between selection:bg-[#eadecc] selection:text-[#1c120a]">
+
+    <!-- Border layout -->
+    <header class="border-b border-[#e6dac7] bg-white/75 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-bold serif-display text-sm uppercase tracking-wider text-[#5c3f2b]">Ancient Text Archives</span>
+            <span class="font-mono text-xs text-[#8f6d53]">DOC_REF_11</span>
+        </div>
+    </header>
+
+    <!-- Reader Frame -->
+    <main class="max-w-md mx-auto px-6 py-12 flex-grow flex flex-col justify-center">
+        <div class="bg-white border border-[#e6dac7] p-8 rounded-3xl shadow-sm relative space-y-6">
+            
+            <div class="space-y-3 pb-4 border-b border-dashed border-[#e6dac7]">
+                <!-- Clicking this Chapter label redirects the user to trail12.html! -->
+                <a href="trail12.html" class="block text-xs uppercase tracking-widest text-[#a17e65] hover:text-[#5c3f2b] transition-colors font-bold font-sans" title="Synchronize central update patch sequence">
+                    Chapter XI — Redirection Labyrinths 🔗
+                </a>
+                <h1 class="text-2xl font-bold serif-display text-[#3d2716] leading-tight">
+                    The Chronicle of the Infinite Hops
+                </h1>
+            </div>
+
+            <!-- Classic text layout -->
+            <p class="text-xs leading-relaxed text-[#4a3424] font-medium text-justify">
+                "In those days, the travelers did not traverse direct pipelines. In their haste to mask geographic coordinate metrics from hostile eyes, code wizards engineered massive networks of proxy relays. Every transaction was fragmented, cast into separate server nodes across the cloud horizons."
+            </p>
+
+            <blockquote class="italic text-xs text-[#705642] pl-3 border-l border-[#a17e65]">
+                "Be warned, explorer: before translating safety keys into the final decryption block elements, active synchronization is required inside sector updating patch nodes."
+            </blockquote>
+
+            <!-- Deceptive Bottom-Center Action (Loops back to start!) -->
+            <div class="text-center pt-2">
+                <a href="start.html?trap=trail11_forced_bypass" class="w-full inline-flex justify-center items-center rounded-xl bg-[#2c1f15] hover:bg-slate-850 hover:opacity-90 text-white text-xs font-bold uppercase py-3.5 transition-all font-sans">
+                    Force Archive Verification Index
+                </a>
+            </div>
+
+            <!-- Hints helper block -->
+            <div class="border border-[#e6dac7] bg-[#fffcf7] p-4 rounded-xl text-xs space-y-1 pt-3">
+                <span class="block text-[#a17e65] font-bold font-sans">💡 Reader Hints:</span>
+                <p class="text-[#8f6d53] leading-relaxed font-light font-sans">
+                    The direct "Force Archive Verification Index" button is fully trapped. To link up securely, click the small metadata **"Chapter XI — Redirection Labyrinths" tag** at the top of the white manuscript block to sync the updates patch!
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#e6dac7] bg-[#f2e7d5]/50 p-4 text-center text-xs text-[#8f6d53]">
+        <p class="font-mono">// ARCHIVE_STATUS: READ_ONLY // CORRUPTION: FALSE</p>
+    </footer>
+</body>
+</html>

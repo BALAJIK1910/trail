@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeker Search Engine | Directory Portal</title>
+    <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-300 min-h-screen flex flex-col justify-between selection:bg-purple-500/20 selection:text-white">
+
+    <!-- Header info panel -->
+    <header class="border-b border-slate-900 bg-[#090d16] px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs font-mono">
+            <span class="text-slate-400">SEARCH_CONSOLE_NODE: 03</span>
+            <div class="text-purple-400 font-semibold uppercase">ACTIVE REGISTRY SEARCH</div>
+        </div>
+    </header>
+
+    <!-- Main Module -->
+    <main class="max-w-md mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
+        <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl space-y-8 relative shadow-2xl">
+            
+            <!-- Logo Section with Secret Hidden Link -->
+            <div class="text-center space-y-1">
+                <h1 class="text-4xl font-extrabold tracking-tight text-white select-none">
+                    Se<a href="trail4.html" class="text-purple-400 hover:text-purple-300 underline decoration-dotted inline-block cursor-help font-bold" title="Seeker Node Integration Gateway">e</a>ker.
+                </h1>
+                <p class="text-xs text-slate-500 font-mono">Federated Cloud Directory Index</p>
+            </div>
+
+            <!-- Interception Alert if they submit invalid tags -->
+            <div id="status-error" class="hidden bg-rose-950/20 border border-rose-800/40 text-rose-300 p-3.5 rounded-xl text-xs text-center font-mono">
+                INVALID REGISTRY ENTRY: SEARCH ROUTER TIMED OUT
+            </div>
+
+            <!-- Real Search Interceptor Input Form -->
+            <div class="space-y-4">
+                <div class="relative">
+                    <input type="text" id="target-search-bar" placeholder="Query index nodes (e.g., trail4)..." class="w-full bg-slate-950 border border-slate-800 text-slate-100 rounded-xl px-4 py-3.5 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent placeholder:text-slate-650 transition-all">
+                </div>
+                <!-- Manual Submit Button triggers JavaScript check -->
+                <button onclick="evaluateQuery()" class="w-full inline-flex justify-center items-center rounded-xl bg-purple-600 hover:bg-purple-500 text-white px-4 py-3.5 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-purple-900/10">
+                    Query Directory Nodes
+                </button>
+            </div>
+
+            <!-- Deceptive Trending Tags Box (All these act as Trap Loops!) -->
+            <div class="space-y-3">
+                <div class="text-xs text-slate-500 font-mono tracking-wider uppercase font-bold">Trending System Audits</div>
+                <div class="flex flex-wrap gap-2">
+                    <a href="start.html?trap=trail3_dns" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 px-3 py-1.5 rounded-lg text-xs hover:text-white transition-colors">
+                        #dns_lookup_trail
+                    </a>
+                    <a href="start.html?trap=trail3_syslog" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 px-3 py-1.5 rounded-lg text-xs hover:text-white transition-colors">
+                        #syslog_audit_9
+                    </a>
+                    <a href="start.html?trap=trail3_auth" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 px-3 py-1.5 rounded-lg text-xs hover:text-white transition-colors">
+                        #aegis_sec_block
+                    </a>
+                </div>
+            </div>
+
+            <!-- Information alert explaining how to pass -->
+            <div class="border border-slate-800 bg-[#0d1323]/40 p-4 rounded-xl text-xs space-y-1">
+                <span class="block text-purple-400 font-bold">💡 Seeker Tips:</span>
+                <p class="text-slate-500 leading-relaxed font-light">
+                    Type the correct destination namespace (e.g., <strong class="text-slate-400">trail4</strong> or <strong class="text-slate-400">trail4.html</strong>) into the finder bar to query the node record directly, or closely inspect the platform brand title above for hidden connections. Clicking wrong tags triggers a trap reset!
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950/40 p-4 text-center text-xs text-slate-600">
+        <p class="font-mono">// ENGINE_STATUS: ONLINE_DESYNC_03</p>
+    </footer>
+
+    <!-- Query evaluator JS logic -->
+    <script>
+        function evaluateQuery() {
+            const val = document.getElementById('target-search-bar').value.trim().toLowerCase();
+            if (val === 'trail4' || val === 'trail4.html' || val === 'trail_4' || val === 'system 4') {
+                window.location.href = 'trail4.html';
+            } else {
+                document.getElementById('status-error').classList.remove('hidden');
+                setTimeout(() => {
+                    // Loop trap resets them to start
+                    window.location.href = 'start.html?trap=trail3_query_failed';
+                }, 1500);
+            }
+        }
+
+        // Add Enter key listener as well
+        document.getElementById('target-search-bar').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                evaluateQuery();
+            }
+        });
+    </script>
+</body>
+</html>

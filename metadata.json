@@ -1,0 +1,6 @@
+{
+  "name": "Redirect Chain CTF Challenge",
+  "description": "A 3-page redirect chain CTF challenge with hidden clues, themes, and a final flag.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

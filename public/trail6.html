@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandma's Kitchen | Secret Apple Pie Recipe</title>
+    <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+        }
+        .serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#faf5ec] text-[#3e2c1c] min-h-screen flex flex-col justify-between selection:bg-[#f0e3ce]">
+
+    <!-- Header bar -->
+    <header class="border-b border-[#e9dcbf] bg-white/70 backdrop-blur px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs">
+            <span class="font-bold uppercase tracking-wider text-[#8a6845] font-sans">Kitchen Archivist Node 6</span>
+            <span class="font-mono text-[#aa845d]">CATALOG_ID_6</span>
+        </div>
+    </header>
+
+    <!-- Recipe Content Module -->
+    <main class="max-w-lg mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
+        <div class="bg-white border border-[#e9dcbf] p-8 rounded-3xl space-y-6 shadow-sm relative">
+            
+            <div class="space-y-2 pb-4 border-b border-dashed border-[#e9dcbf] text-center">
+                <span class="text-xs uppercase tracking-widest text-[#aa845d] font-bold font-sans">Sunday Bakery Edition</span>
+                <!-- Clicking the pie emoji "🍰" redirects the user to trail7.html! -->
+                <h1 class="text-3xl font-extrabold serif-display text-[#2b1b0e] leading-tight">
+                    Grandma's Apple Pie 
+                    <a href="trail7.html" class="inline-block hover:scale-125 transition-transform duration-150 cursor-help" title="Click to view localized baking weather data">🍰</a>
+                </h1>
+            </div>
+
+            <!-- Recipe Intro quotes -->
+            <p class="text-sm leading-relaxed text-[#5e4530] text-justify italic">
+                "Bake at standard temperature coordinates. To achieve optimal crunch density, synchronize with atmospheric pressure and air draft data recorded on weather meteorology station 7."
+            </p>
+
+            <!-- Deceptive baking recipe instructions list (All redirect to trap loop!) -->
+            <div class="space-y-3.5">
+                <div class="font-sans text-xs font-bold uppercase tracking-wider text-[#8a6845]">Preparation Steps</div>
+                <div class="space-y-2 text-xs">
+                    <a href="start.html?trap=trail6_step1" class="block bg-[#faf5ec] hover:bg-[#f3eadc] border border-[#e9dcbf]/60 p-3 rounded-xl transition-all font-sans">
+                        <span class="font-bold text-[#8a6845]">Step 1: Core and Slice Apples</span>
+                        <p class="text-slate-500 font-light mt-0.5">Core exactly 6 medium apples and slice into thin disks.</p>
+                    </a>
+                    <a href="start.html?trap=trail6_step2" class="block bg-[#faf5ec] hover:bg-[#f3eadc] border border-[#e9dcbf]/60 p-3 rounded-xl transition-all font-sans">
+                        <span class="font-bold text-[#8a6845]">Step 2: Fold Pastry Margins</span>
+                        <p class="text-slate-500 font-light mt-0.5">Gently fold butter margins to create standard multi-layered flaky dough.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hint helper note -->
+            <div class="border border-[#e9dcbf] bg-[#fffcf7] p-4 rounded-xl text-xs space-y-1.5 mt-2">
+                <span class="block text-[#a57f5c] font-bold font-sans">💡 Baking Hint:</span>
+                <p class="text-[#725a45] leading-relaxed font-light font-sans">
+                    The written baking instructions are deceptive traps. You must discover and click the sweet **pie slice emoji (🍰)** next to the main recipe title above to query the active meteorological station!
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#e9dcbf] bg-[#f5ebd7]/50 p-4 text-center text-xs text-[#8a6845]">
+        <p class="font-mono">// TEMPERATURE: 375F // ENCRYPTION_CRUST: STABLE</p>
+    </footer>
+</body>
+</html>

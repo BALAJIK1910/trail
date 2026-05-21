@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Merchant Gateway | Session Checkout 8</title>
+    <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-300 min-h-screen flex flex-col justify-between selection:bg-indigo-500/20 selection:text-white-active">
+
+    <!-- Header info panel -->
+    <header class="border-b border-slate-900 bg-[#080b12] px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs code-font">
+            <span class="text-slate-500">SECURE_INVOICE_8</span>
+            <div class="text-indigo-400 font-bold uppercase">SEC_TRANS_AUTHENTICATED</div>
+        </div>
+    </header>
+
+    <!-- Billing Invoice Main Card -->
+    <main class="max-w-md mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
+        <div class="bg-slate-900/50 border border-slate-800/80 p-8 rounded-3xl space-y-6 relative shadow-2xl">
+            
+            <div class="space-y-1.5 text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-950/40 text-indigo-400 border border-indigo-800/30">
+                    💳
+                </div>
+                <h1 class="text-xl font-bold tracking-tight text-white pt-1">Verify Invoice Credentials</h1>
+                <p class="text-xs text-slate-500 font-mono">Invoice Node: #INVOICE-8-71822</p>
+            </div>
+
+            <!-- Fake Invoice Specs table -->
+            <div class="border border-slate-800/60 bg-slate-950/40 divide-y divide-slate-900 rounded-2xl p-4 text-xs space-y-2.5">
+                <div class="flex justify-between text-slate-400 pb-1">
+                    <span>Target Verification Service:</span>
+                    <span class="text-indigo-400 font-bold font-mono">Hops_Decrypter_Chain</span>
+                </div>
+                <div class="flex justify-between text-slate-400 pt-2 pb-1">
+                    <span>Registry Clearance:</span>
+                    <span class="text-indigo-400 font-bold font-mono">13 Nodes Approved</span>
+                </div>
+                <div class="flex justify-between text-slate-400 pt-2">
+                    <span>Due Balance:</span>
+                    <span class="text-teal-400 font-bold">0.00 USD</span>
+                </div>
+            </div>
+
+            <!-- Mock Billing interactive Forms (Submitting this defaults to Loop trap!) -->
+            <div class="space-y-3 pt-1">
+                <label class="block text-[10px] uppercase font-mono tracking-wider font-bold text-slate-400">Merchant Credit Card Digits</label>
+                <input type="text" id="fake-card" placeholder="4111 2222 3333 4444" class="w-full bg-slate-950 border border-slate-800 text-slate-100 rounded-xl px-4 py-3 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                <button onclick="triggerInvoiceTrap()" class="w-full inline-flex justify-center items-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 text-xs uppercase tracking-wider transition-all">
+                    Complete Direct Handshake Verification
+                </button>
+            </div>
+
+            <!-- Caution alert box carrying the secret lock emoji clue! -->
+            <div class="border border-indigo-900/30 bg-indigo-950/15 p-4 rounded-xl text-xs space-y-1.5 leading-relaxed">
+                <span class="text-indigo-400 font-bold">ℹ️ Integration Notice:</span>
+                <p class="text-slate-400 font-light">
+                    The authorization ledger database keeps an offline log check. Click the security badge 
+                    <!-- Clicking this padlock '🔐' redirects directly to trail9.html! -->
+                    <a href="trail9.html" class="inline-block hover:scale-125 transition-all text-amber-400 cursor-help" title="Click to verify ledger node 9 lock">🔐</a> 
+                    to sync live uptime monitor readings on Node 9.
+                </p>
+            </div>
+
+            <!-- Tip banner -->
+            <div class="border border-slate-800 bg-[#0c1223]/30 p-4 rounded-xl text-xs space-y-1">
+                <span class="block text-indigo-400 font-bold">💡 Checkout Hints:</span>
+                <p class="text-slate-500 leading-relaxed font-light">
+                    Submitting credit card digits or clicking "Complete Handshake" triggers an instant reset trap. You must click the golden **padlock emoji (🔐)** next to the Integration Notice to pass into Node 9 safely!
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950/40 p-4 text-center text-xs text-slate-600">
+        <p class="code-font">// HOST_STATUS: TRANSACTIONAL_SSL // MERCHANT_ID: 8</p>
+    </footer>
+
+    <script>
+        function triggerInvoiceTrap() {
+            // Instant redirect trap
+            window.location.href = 'start.html?trap=invoice_bad_submit';
+        }
+    </script>
+</body>
+</html>
