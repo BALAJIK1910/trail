@@ -83,18 +83,12 @@
                         class="text-indigo-400 font-bold underline hover:text-indigo-300">balancer</a> node metrics
                     tracker logic. Please verify.
                 </p>
-            </div>
-
-            <!-- Visual Warning Box -->
-            <div class="border border-slate-800/80 bg-slate-950/20 p-4 rounded-xl text-xs space-y-1.5">
-                <span class="block text-slate-400 font-bold">🔍 Hint from Diagnostics:</span>
-                <p class="text-slate-500 leading-relaxed font-light">
-                    Traditional automatic time redirection is suspended. Find and click either the diagnostic <strong
-                        class="text-slate-400">watermark path</strong> or the faulty <strong
-                        class="text-slate-400">load-balancing node moniker</strong> inside the trace log dump to step
-                    forward safely.
+                <p class="text-rose-550/80">
+                    [00:01:45] [warn] Redirection desync: Press Ctrl+Alt+B or click the 'Skip Connection' button below to bypass.
                 </p>
             </div>
+
+            <!-- TRICKY HINT: The diagnostic watermark has a high desync rate. Click the 'Skip Connection Restart' button at the bottom to force cache sync. -->
 
             <!-- TRAP BUTTON: Deceptive bypass button loops back to start.html?trap=middle_skip -->
             <div class="pt-2">
