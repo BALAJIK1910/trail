@@ -1,48 +1,58 @@
+<!-- DEBUG: FLAG{w3lcome_to_th3_start} -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bits & Bytes | Optimizing Network Architecture</title>
     <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-900 selection:bg-indigo-100 min-h-screen flex flex-col justify-between">
 
     <!-- Header -->
     <header class="border-b border-slate-200 bg-white/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">B</div>
+                <div
+                    class="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                    B</div>
                 <span class="font-bold tracking-tight text-slate-800">Bits &amp; Bytes</span>
             </div>
             <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
                 <a href="#" class="hover:text-slate-900 transition-colors">Articles</a>
                 <a href="#" class="hover:text-slate-900 transition-colors">Tutorials</a>
-                <a href="#" class="hover:text-slate-900 transition-colors font-bold text-indigo-600">Active CTF Trial</a>
+                <a href="#" class="hover:text-slate-900 transition-colors font-bold text-indigo-600">Active CTF
+                    Trial</a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="max-w-5xl mx-auto px-6 py-12 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
+
         <!-- Post content -->
         <article class="lg:col-span-8 space-y-8">
-            
+
             <!-- Trap Toast warning if player fell for a pipeline loop -->
-            <div id="trap-alert" class="hidden bg-rose-50 border border-rose-200 text-rose-800 p-4 rounded-xl text-xs space-y-1">
+            <div id="trap-alert"
+                class="hidden bg-rose-50 border border-rose-200 text-rose-800 p-4 rounded-xl text-xs space-y-1">
                 <span class="font-bold block text-sm">⚠️ CONNECTION RESET LOOP TRIGGERED</span>
-                <span>You fell for a decorative bypass component or automatic route interval! Analyze each interface thoroughly for faint watermarks, subtle symbols, or hidden keywords to continue.</span>
+                <span>You fell for a decorative bypass component or automatic route interval! Analyze each interface
+                    thoroughly for faint watermarks, subtle symbols, or hidden keywords to continue.</span>
             </div>
 
             <header class="space-y-4">
@@ -55,7 +65,8 @@
                     Understanding Latency and Redirection Hops in Distributed Systems
                 </h1>
                 <div class="flex items-center space-x-4 py-4 border-b border-slate-100">
-                    <div class="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-700 font-semibold border border-slate-300">
+                    <div
+                        class="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-700 font-semibold border border-slate-300">
                         JD
                     </div>
                     <div>
@@ -67,16 +78,22 @@
 
             <div class="prose prose-slate max-w-none space-y-6 text-slate-700 leading-relaxed text-md">
                 <p>
-                    Modern cloud systems depend heavily on minimizing round-trip times (RTT). When a user sends a query, it traverses several layers of infrastructure: Content Delivery Networks (CDNs), local proxies, firewalls, and application load-balancers before finally arriving at the host container.
+                    Modern cloud systems depend heavily on minimizing round-trip times (RTT). When a user sends a query,
+                    it traverses several layers of infrastructure: Content Delivery Networks (CDNs), local proxies,
+                    firewalls, and application load-balancers before finally arriving at the host container.
                 </p>
-                
+
                 <p>
-                    Each node along this journey represents a <span class="font-semibold text-slate-900">hop</span>. If your configuration introduces unnecessary routing redirects or deep middleware chains, you will notice significant degradation in response times, leading to poor user retention.
+                    Each node along this journey represents a <span class="font-semibold text-slate-900">hop</span>. If
+                    your configuration introduces unnecessary routing redirects or deep middleware chains, you will
+                    notice significant degradation in response times, leading to poor user retention.
                 </p>
 
                 <!-- Highlighting some code with styled codeblock -->
-                <div class="bg-slate-900 rounded-xl p-5 my-6 text-slate-300 text-sm overflow-x-auto border border-slate-800 shadow-lg">
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-800 mb-3 text-xs text-slate-500 font-mono">
+                <div
+                    class="bg-slate-900 rounded-xl p-5 my-6 text-slate-300 text-sm overflow-x-auto border border-slate-800 shadow-lg">
+                    <div
+                        class="flex justify-between items-center pb-3 border-b border-slate-800 mb-3 text-xs text-slate-500 font-mono">
                         <span>nginx.conf</span>
                         <span>v1.4.2</span>
                     </div>
@@ -92,17 +109,24 @@
                 </div>
 
                 <p>
-                    Architects often make the mistake of creating highly nested redirect pipelines under the hood. For instance, in our recent performance audit, we discovered that some legacy handlers were chaining three to four server hops together before returning the target payload.
+                    Architects often make the mistake of creating highly nested redirect pipelines under the hood. For
+                    instance, in our recent performance audit, we discovered that some legacy handlers were chaining
+                    three to four server hops together before returning the target payload.
                 </p>
 
                 <p>
-                    To resolve this, we recommend establishing a direct connection mapping. Why wait long intervals when the subsequent step is just <span class="underline decoration-indigo-500 decoration-2 font-semibold text-indigo-700 hover:text-indigo-900 hover:underline"><a href="middle.html" id="hop-link" class="transition-all">one hop away</a></span> from this origin server? Always minimize standard redirection chains.
+                    To resolve this, we recommend establishing a direct connection mapping. Why wait long intervals when
+                    the subsequent step is just <span
+                        class="underline decoration-indigo-500 decoration-2 font-semibold text-indigo-700 hover:text-indigo-900 hover:underline"><a
+                            href="middle.html" id="hop-link" class="transition-all">one hop away</a></span> from this
+                    origin server? Always minimize standard redirection chains.
                 </p>
             </div>
 
             <footer class="pt-8 border-t border-slate-200 text-sm text-slate-400 flex justify-between items-center">
                 <span>© 2026 Bits &amp; Bytes Blog</span>
-                <span class="text-xs code-font bg-slate-100 text-slate-600 px-2 py-1 rounded">node_id: gateway_alpha</span>
+                <span class="text-xs code-font bg-slate-100 text-slate-600 px-2 py-1 rounded">node_id:
+                    gateway_alpha</span>
             </footer>
         </article>
 
@@ -110,13 +134,17 @@
         <aside class="lg:col-span-4 space-y-6">
             <div class="bg-indigo-900 text-white rounded-2xl p-6 space-y-4 shadow-xl relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 h-32 w-32 bg-indigo-700/50 rounded-full blur-2xl"></div>
-                <span class="text-[10px] uppercase font-mono tracking-widest bg-indigo-5050 text-indigo-200 px-2 py-0.5 rounded">QUICK ACCESS</span>
+                <span
+                    class="text-[10px] uppercase font-mono tracking-widest bg-indigo-5050 text-indigo-200 px-2 py-0.5 rounded">QUICK
+                    ACCESS</span>
                 <h3 class="font-bold text-lg leading-tight">Master Connection Blueprints</h3>
                 <p class="text-xs text-indigo-250 leading-relaxed font-light">
-                    Short-circuit the network diagnostics pipeline. Click below to immediately force the central decryption gateway sequence.
+                    Short-circuit the network diagnostics pipeline. Click below to immediately force the central
+                    decryption gateway sequence.
                 </p>
                 <!-- TRAP BUTTON: This prominent button loops them right back to start.html?trap=blueprint -->
-                <a href="start.html?trap=blueprint" class="block text-center text-xs font-bold uppercase tracking-wider text-slate-900 bg-white hover:bg-slate-100 py-3 rounded-xl transition-all shadow-md active:scale-95">
+                <a href="start.html?trap=blueprint"
+                    class="block text-center text-xs font-bold uppercase tracking-wider text-slate-900 bg-white hover:bg-slate-100 py-3 rounded-xl transition-all shadow-md active:scale-95">
                     🚀 Direct Bypass Connection
                 </a>
             </div>
@@ -131,5 +159,7 @@
             document.getElementById('trap-alert').classList.remove('hidden');
         }
     </script>
+    <script src="route-guard.js"></script>
 </body>
+
 </html>

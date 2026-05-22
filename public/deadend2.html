@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Override Console | ACTIVE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        @keyframes klaxon {
+
+            0%,
+            100% {
+                background-color: rgba(220, 38, 38, 0.05);
+            }
+
+            50% {
+                background-color: rgba(220, 38, 38, 0.15);
+            }
+        }
+
+        .klaxon-flash {
+            animation: klaxon 1s ease-in-out infinite;
+        }
+
+        @keyframes countdown-pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .countdown-blink {
+            animation: countdown-pulse 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#0a0505] text-red-400 min-h-screen flex flex-col justify-between selection:bg-red-500/20 selection:text-white klaxon-flash">
+
+    <!-- Header -->
+    <header class="border-b border-red-950/60 bg-[#120606] px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs code-font">
+            <span class="text-red-700 font-bold">EMERGENCY_OVERRIDE_CONSOLE</span>
+            <div class="flex items-center space-x-2">
+                <span class="text-amber-500 font-bold countdown-blink uppercase">⚠ ALERT ACTIVE</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Emergency Console -->
+    <main class="max-w-lg mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
+        <div class="bg-[#120808]/80 border border-red-900/40 p-8 rounded-3xl space-y-6 relative shadow-2xl">
+
+            <div class="space-y-2 text-center">
+                <div
+                    class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-950/40 border-2 border-red-700/40 text-3xl countdown-blink">
+                    🚨
+                </div>
+                <h1 class="text-xl font-bold text-red-300 tracking-tight pt-2 uppercase">Emergency Override</h1>
+                <p class="text-xs text-red-700 code-font">Critical system breach detected — override initiated</p>
+            </div>
+
+            <!-- Countdown animation -->
+            <div class="text-center space-y-2">
+                <div class="text-[10px] text-red-600 code-font uppercase tracking-widest">System Override In</div>
+                <div id="countdown" class="text-4xl font-bold text-red-500 code-font countdown-blink">00:45</div>
+            </div>
+
+            <!-- Fake warning logs -->
+            <div
+                class="bg-[#080202] border border-red-950/60 p-4 rounded-xl text-xs space-y-2 code-font text-red-500/80 leading-relaxed max-h-40 overflow-y-auto">
+                <div
+                    class="text-red-700 font-bold text-[10px] uppercase tracking-wider border-b border-red-950 pb-2 mb-2">
+                    Emergency Log</div>
+                <div class="text-red-400">[CRIT] Firewall breach detected on port 443</div>
+                <div>[warn] Initiating emergency override protocol...</div>
+                <div class="text-amber-500">[alert] Counter-intrusion measures deploying</div>
+                <div>[info] Backup systems switching to failover mode</div>
+                <div class="text-red-400">[CRIT] Decryption vault access: PENDING OVERRIDE</div>
+                <div>[warn] All non-essential services suspended</div>
+            </div>
+
+            <!-- Warning Buttons -->
+            <div class="space-y-3">
+                <div class="border border-amber-800/30 bg-amber-950/10 p-4 rounded-xl text-xs space-y-1">
+                    <span class="block text-amber-500 font-bold">⚠ Warning:</span>
+                    <p class="text-slate-500 leading-relaxed font-light">
+                        Emergency override will grant full system access. This action is irreversible. Decryption keys
+                        will be released automatically upon completion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-red-950/40 bg-[#120606]/40 p-4 text-center text-xs text-red-800">
+        <p class="code-font">// OVERRIDE_STATUS: ACTIVE // NODE: DEADEND_2</p>
+    </footer>
+
+    <!-- Trap Reveal Overlay (appears after 10 seconds) -->
+    <div id="trap-overlay"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div class="max-w-md w-full mx-6 space-y-6 text-center animate-[fadeIn_0.5s_ease-out]">
+            <img src="/images/trap2.png" alt="Gotcha!"
+                class="mx-auto rounded-2xl border border-red-800/40 shadow-2xl max-w-xs">
+            <div class="space-y-3">
+                <h2 class="text-2xl font-bold text-white tracking-tight">Nice try! This was a decoy route.</h2>
+                <p class="text-sm text-red-400">There is no emergency override — this was a dead end designed to waste
+                    your time.</p>
+            </div>
+            <a href="trail9.html"
+                class="inline-flex justify-center items-center rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 text-xs uppercase tracking-wider transition-all">
+                Return to Trail
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Fake countdown timer
+        let seconds = 45;
+        const countdownEl = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+            }
+            const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+            const s = String(seconds % 60).padStart(2, '0');
+            countdownEl.textContent = `${m}:${s}`;
+        }, 1000);
+
+        // Trap reveal after 10 seconds
+        setTimeout(() => {
+            document.getElementById('trap-overlay').classList.remove('hidden');
+        }, 10000);
+    </script>
+    <script src="route-guard.js"></script>
+</body>
+
+</html>

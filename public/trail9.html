@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Latency Monitor | Active Status Node 9</title>
     <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
         }
+
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
-<body class="bg-[#050811] text-teal-400 min-h-screen flex flex-col justify-between selection:bg-teal-500/20 selection:text-white">
+
+<body
+    class="bg-[#050811] text-teal-400 min-h-screen flex flex-col justify-between selection:bg-teal-500/20 selection:text-white">
 
     <!-- Header info panel -->
     <header class="border-b border-teal-950 bg-[#070c18]/80 px-6 py-4">
@@ -29,9 +35,10 @@
     <!-- Latency Dashboard Main Module -->
     <main class="max-w-md mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
         <div class="bg-slate-900/40 border border-teal-950/70 p-8 rounded-3xl space-y-6 relative shadow-2xl">
-            
+
             <div class="space-y-1.5 text-center">
-                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-950/25 border border-teal-900/30">
+                <div
+                    class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-950/25 border border-teal-900/30">
                     🟢
                 </div>
                 <!-- Clicking the green dot status or 99.98% redirects directly to trail10.html! -->
@@ -43,9 +50,13 @@
             <div class="grid grid-cols-2 gap-3 text-center text-xs">
                 <div class="bg-teal-950/10 border border-teal-900/20 p-3 rounded-2xl relative">
                     <!-- Clicking the green dot or the percentage redirects to trail10.html! -->
-                    <a href="trail10.html" class="absolute top-2 right-2 flex items-center h-2 w-2 rounded-full bg-emerald-500 animate-ping cursor-pointer" title="Direct Diagnostics Link"></a>
+                    <a href="trail10.html"
+                        class="absolute top-2 right-2 flex items-center h-2 w-2 rounded-full bg-emerald-500 animate-ping cursor-pointer"
+                        title="Direct Diagnostics Link"></a>
                     <span class="text-teal-600 block text-[10px] font-mono tracking-wider">UPTIME RATIO</span>
-                    <a href="trail10.html" class="text-slate-100 font-bold text-sm tracking-wider hover:text-emerald-400 transition-colors" title="Click to open route 10">99.98%</a>
+                    <a href="trail10.html"
+                        class="text-slate-100 font-bold text-sm tracking-wider hover:text-emerald-400 transition-colors"
+                        title="Click to open route 10">99.98%</a>
                 </div>
                 <div class="bg-teal-950/10 border border-teal-900/20 p-3 rounded-2xl">
                     <span class="text-teal-600 block text-[10px] font-mono tracking-wider">LATENCY (RTT)</span>
@@ -54,14 +65,24 @@
             </div>
 
             <!-- Simulated live terminal log block -->
-            <div class="bg-slate-950 border border-teal-950/65 p-4 rounded-xl text-xs space-y-2.5 font-mono text-teal-500/90 leading-relaxed">
+            <div
+                class="bg-slate-950 border border-teal-950/65 p-4 rounded-xl text-xs space-y-2.5 font-mono text-teal-500/90 leading-relaxed">
                 <div>[status] Analyzing log entries with central indexes...</div>
-                <div class="text-[#0ea5e9]">[syslog] User conversation routes opened with AI Chat Assistant. File registry points directly to: trail10.html</div>
+                <div class="text-[#0ea5e9]">[syslog] User conversation routes opened with AI Chat Assistant. File
+                    registry points directly to: trail10.html</div>
             </div>
+
+            <!-- Dead-End Trap: Flashing emergency override alert -->
+            <a href="deadend2.html"
+                class="block w-full bg-red-950/30 hover:bg-red-950/50 border border-red-800/40 hover:border-red-600/60 px-4 py-3 rounded-xl transition-all text-center animate-pulse cursor-pointer">
+                <span class="text-red-400 font-bold text-xs uppercase tracking-wider">⚠️ CRITICAL: Emergency Override
+                    Available</span>
+            </a>
 
             <!-- TRAP BUTTON: "Navigate to Chat Assistant" is a deceptive pipeline trap redirecting back to start -->
             <div class="pt-1">
-                <a href="start.html?trap=status_bypass_failed" class="w-full inline-flex justify-center items-center rounded-xl bg-teal-600 hover:bg-teal-500 text-slate-950 font-bold py-3 text-xs uppercase tracking-wider transition-all shadow-lg active:scale-95">
+                <a href="start.html?trap=status_bypass_failed"
+                    class="w-full inline-flex justify-center items-center rounded-xl bg-teal-600 hover:bg-teal-500 text-slate-950 font-bold py-3 text-xs uppercase tracking-wider transition-all shadow-lg active:scale-95">
                     Navigate to Chat Assistant Router Node
                 </a>
             </div>
@@ -70,7 +91,9 @@
             <div class="border border-teal-950/40 bg-teal-950/10 p-4 rounded-xl text-xs space-y-1">
                 <span class="block text-teal-400 font-bold">💡 Monitor Hints:</span>
                 <p class="text-slate-500 leading-relaxed font-light">
-                    The large "Navigate to Chat Assistant" route button is fully trapped. To link up safely, select either the golden **99.98% index text** or click the tiny pulsing **green glowing status dot** in the top right corner of the statistics card to proceed!
+                    The large "Navigate to Chat Assistant" route button is fully trapped. To link up safely, select
+                    either the golden **99.98% index text** or click the tiny pulsing **green glowing status dot** in
+                    the top right corner of the statistics card to proceed!
                 </p>
             </div>
 
@@ -81,5 +104,7 @@
     <footer class="border-t border-teal-950/50 bg-[#050811]/40 p-4 text-center text-xs text-teal-800">
         <p class="code-font">// HOST_STATUS: DYN_INDEX_9 // LATENCY_LOG: LOGGED</p>
     </footer>
+    <script src="route-guard.js"></script>
 </body>
+
 </html>

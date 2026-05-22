@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel | ROOT ACCESS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#0a0a0f] text-red-400 min-h-screen flex flex-col justify-between selection:bg-red-500/20 selection:text-white">
+
+    <!-- Header -->
+    <header class="border-b border-red-950/60 bg-[#0d0508] px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs code-font">
+            <span class="text-red-700 font-bold">ADMIN_PANEL_ROOT</span>
+            <div class="flex items-center space-x-2">
+                <span class="h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                <span class="text-red-500 font-bold uppercase">ACCESS LEVEL: ROOT</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="max-w-lg mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
+        <div class="bg-[#120a10]/80 border border-red-950/60 p-8 rounded-3xl space-y-6 relative shadow-2xl">
+
+            <div class="space-y-2 text-center">
+                <div
+                    class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-red-950/30 border border-red-900/30 text-3xl pulse-glow">
+                    🛡️
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight pt-2">Admin Control Panel</h1>
+                <p class="text-xs text-red-700 code-font uppercase">Authenticated as SysAdmin_Root</p>
+            </div>
+
+            <!-- System Stats -->
+            <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="bg-red-950/15 border border-red-900/25 p-4 rounded-2xl text-center">
+                    <span class="text-red-600 block text-[10px] font-mono tracking-wider uppercase">CPU Load</span>
+                    <span class="text-white font-bold text-lg">0.42</span>
+                </div>
+                <div class="bg-red-950/15 border border-red-900/25 p-4 rounded-2xl text-center">
+                    <span class="text-red-600 block text-[10px] font-mono tracking-wider uppercase">Memory</span>
+                    <span class="text-white font-bold text-lg">78%</span>
+                </div>
+                <div class="bg-red-950/15 border border-red-900/25 p-4 rounded-2xl text-center">
+                    <span class="text-red-600 block text-[10px] font-mono tracking-wider uppercase">Active Users</span>
+                    <span class="text-white font-bold text-lg">247</span>
+                </div>
+                <div class="bg-red-950/15 border border-red-900/25 p-4 rounded-2xl text-center">
+                    <span class="text-red-600 block text-[10px] font-mono tracking-wider uppercase">Uptime</span>
+                    <span class="text-white font-bold text-lg">99.9%</span>
+                </div>
+            </div>
+
+            <!-- Access Log -->
+            <div
+                class="bg-[#080406] border border-red-950 p-4 rounded-xl text-xs space-y-2 code-font text-red-500/80 leading-relaxed max-h-40 overflow-y-auto">
+                <div
+                    class="text-red-700 font-bold text-[10px] uppercase tracking-wider border-b border-red-950 pb-2 mb-2">
+                    Access Log</div>
+                <div>[auth] SysAdmin_Root authenticated via certificate</div>
+                <div>[info] Panel access granted — all subsystems visible</div>
+                <div>[warn] 3 pending security patches available</div>
+                <div>[info] Flag decryption pipeline: STANDBY</div>
+            </div>
+
+            <!-- Status message -->
+            <div class="border border-red-900/30 bg-red-950/10 p-4 rounded-xl text-xs space-y-1">
+                <span class="block text-red-400 font-bold">ℹ️ System Notice:</span>
+                <p class="text-slate-500 leading-relaxed font-light">
+                    Admin panel active. Monitoring all node traffic in real-time. Flag extraction utilities are located
+                    in the secure vault subsystem.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-red-950/40 bg-[#0d0508]/40 p-4 text-center text-xs text-red-800">
+        <p class="code-font">// PANEL_ACCESS: ROOT // NODE: DEADEND_1</p>
+    </footer>
+
+    <!-- Trap Reveal Overlay (appears after 10 seconds) -->
+    <div id="trap-overlay"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div class="max-w-md w-full mx-6 space-y-6 text-center animate-[fadeIn_0.5s_ease-out]">
+            <img src="/images/trap1.png" alt="Gotcha!"
+                class="mx-auto rounded-2xl border border-red-800/40 shadow-2xl max-w-xs">
+            <div class="space-y-3">
+                <h2 class="text-2xl font-bold text-white tracking-tight">You fell into the trap!</h2>
+                <p class="text-sm text-red-400">This was a dead end. There is nothing useful here — go back and find the
+                    real path.</p>
+            </div>
+            <a href="trail3.html"
+                class="inline-flex justify-center items-center rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 text-xs uppercase tracking-wider transition-all">
+                Return to Trail
+            </a>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('trap-overlay').classList.remove('hidden');
+        }, 10000);
+    </script>
+    <script src="route-guard.js"></script>
+</body>
+
+</html>

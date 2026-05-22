@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Merchant Gateway | Session Checkout 8</title>
     <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
         }
+
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-300 min-h-screen flex flex-col justify-between selection:bg-indigo-500/20 selection:text-white-active">
+
+<body
+    class="bg-slate-950 text-slate-300 min-h-screen flex flex-col justify-between selection:bg-indigo-500/20 selection:text-white-active">
 
     <!-- Header info panel -->
     <header class="border-b border-slate-900 bg-[#080b12] px-6 py-4">
@@ -29,9 +35,10 @@
     <!-- Billing Invoice Main Card -->
     <main class="max-w-md mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
         <div class="bg-slate-900/50 border border-slate-800/80 p-8 rounded-3xl space-y-6 relative shadow-2xl">
-            
+
             <div class="space-y-1.5 text-center">
-                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-950/40 text-indigo-400 border border-indigo-800/30">
+                <div
+                    class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-950/40 text-indigo-400 border border-indigo-800/30">
                     💳
                 </div>
                 <h1 class="text-xl font-bold tracking-tight text-white pt-1">Verify Invoice Credentials</h1>
@@ -39,7 +46,8 @@
             </div>
 
             <!-- Fake Invoice Specs table -->
-            <div class="border border-slate-800/60 bg-slate-950/40 divide-y divide-slate-900 rounded-2xl p-4 text-xs space-y-2.5">
+            <div
+                class="border border-slate-800/60 bg-slate-950/40 divide-y divide-slate-900 rounded-2xl p-4 text-xs space-y-2.5">
                 <div class="flex justify-between text-slate-400 pb-1">
                     <span>Target Verification Service:</span>
                     <span class="text-indigo-400 font-bold font-mono">Hops_Decrypter_Chain</span>
@@ -56,20 +64,25 @@
 
             <!-- Mock Billing interactive Forms (Submitting this defaults to Loop trap!) -->
             <div class="space-y-3 pt-1">
-                <label class="block text-[10px] uppercase font-mono tracking-wider font-bold text-slate-400">Merchant Credit Card Digits</label>
-                <input type="text" id="fake-card" placeholder="4111 2222 3333 4444" class="w-full bg-slate-950 border border-slate-800 text-slate-100 rounded-xl px-4 py-3 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-indigo-500">
-                <button onclick="triggerInvoiceTrap()" class="w-full inline-flex justify-center items-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 text-xs uppercase tracking-wider transition-all">
+                <label class="block text-[10px] uppercase font-mono tracking-wider font-bold text-slate-400">Merchant
+                    Credit Card Digits</label>
+                <input type="text" id="fake-card" placeholder="4111 2222 3333 4444"
+                    class="w-full bg-slate-950 border border-slate-800 text-slate-100 rounded-xl px-4 py-3 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                <button onclick="triggerInvoiceTrap()"
+                    class="w-full inline-flex justify-center items-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 text-xs uppercase tracking-wider transition-all">
                     Complete Direct Handshake Verification
                 </button>
             </div>
 
             <!-- Caution alert box carrying the secret lock emoji clue! -->
-            <div class="border border-indigo-900/30 bg-indigo-950/15 p-4 rounded-xl text-xs space-y-1.5 leading-relaxed">
+            <div
+                class="border border-indigo-900/30 bg-indigo-950/15 p-4 rounded-xl text-xs space-y-1.5 leading-relaxed">
                 <span class="text-indigo-400 font-bold">ℹ️ Integration Notice:</span>
                 <p class="text-slate-400 font-light">
-                    The authorization ledger database keeps an offline log check. Click the security badge 
+                    The authorization ledger database keeps an offline log check. Click the security badge
                     <!-- Clicking this padlock '🔐' redirects directly to trail9.html! -->
-                    <a href="trail9.html" class="inline-block hover:scale-125 transition-all text-amber-400 cursor-help" title="Click to verify ledger node 9 lock">🔐</a> 
+                    <a href="trail9.html" class="inline-block hover:scale-125 transition-all text-amber-400 cursor-help"
+                        title="Click to verify ledger node 9 lock">🔐</a>
                     to sync live uptime monitor readings on Node 9.
                 </p>
             </div>
@@ -78,7 +91,9 @@
             <div class="border border-slate-800 bg-[#0c1223]/30 p-4 rounded-xl text-xs space-y-1">
                 <span class="block text-indigo-400 font-bold">💡 Checkout Hints:</span>
                 <p class="text-slate-500 leading-relaxed font-light">
-                    Submitting credit card digits or clicking "Complete Handshake" triggers an instant reset trap. You must click the golden **padlock emoji (🔐)** next to the Integration Notice to pass into Node 9 safely!
+                    Submitting credit card digits or clicking "Complete Handshake" triggers an instant reset trap. You
+                    must click the golden **padlock emoji (🔐)** next to the Integration Notice to pass into Node 9
+                    safely!
                 </p>
             </div>
 
@@ -90,11 +105,53 @@
         <p class="code-font">// HOST_STATUS: TRANSACTIONAL_SSL // MERCHANT_ID: 8</p>
     </footer>
 
+    <!-- Invoice Gate Overlay -->
+    <div id="gate-overlay" class="fixed inset-0 z-50 bg-slate-950 flex items-center justify-center">
+        <div class="max-w-md w-full mx-4 space-y-6 text-center">
+            <div
+                class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-950/40 border border-indigo-800/30 text-3xl">
+                🧾
+            </div>
+            <h2 class="text-xl font-bold text-indigo-400 uppercase tracking-wider font-mono">Invoice Verification
+                Required</h2>
+            <p class="text-xs text-slate-500 font-mono">Enter the invoice number to access the checkout gateway</p>
+            <div class="space-y-3">
+                <input type="text" id="gate-password" placeholder="Enter Invoice Number..."
+                    class="w-full bg-slate-950 border border-slate-800 text-slate-100 rounded-xl px-4 py-3 text-sm font-mono text-center focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                    autofocus>
+                <div id="gate-error" class="hidden text-red-500 text-xs font-bold font-mono animate-pulse">Invoice not
+                    found in registry.</div>
+                <button onclick="checkGate()"
+                    class="w-full inline-flex justify-center items-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 text-xs uppercase tracking-wider transition-all">
+                    Look Up Invoice
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Gate logic
+        function checkGate() {
+            const pw = document.getElementById('gate-password').value.trim();
+            if (pw === 'INV-2049') {
+                const overlay = document.getElementById('gate-overlay');
+                overlay.style.transition = 'opacity 0.5s ease-out';
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.remove(), 500);
+            } else {
+                document.getElementById('gate-error').classList.remove('hidden');
+                setTimeout(() => document.getElementById('gate-error').classList.add('hidden'), 2000);
+            }
+        }
+        document.getElementById('gate-password').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') checkGate();
+        });
+
         function triggerInvoiceTrap() {
-            // Instant redirect trap
             window.location.href = 'start.html?trap=invoice_bad_submit';
         }
     </script>
+    <script src="route-guard.js"></script>
 </body>
+
 </html>

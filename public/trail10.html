@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aegis AI Simulation | Active Chat Node 10</title>
     <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
         }
+
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
-<body class="bg-[#0b0f19] text-indigo-300 min-h-screen flex flex-col justify-between selection:bg-indigo-500/20 selection:text-white">
+
+<body
+    class="bg-[#0b0f19] text-indigo-300 min-h-screen flex flex-col justify-between selection:bg-indigo-500/20 selection:text-white">
 
     <!-- Header info panel -->
     <header class="border-b border-indigo-950 bg-[#090d16]/90 px-6 py-4">
@@ -29,9 +35,10 @@
     <!-- Main Module -->
     <main class="max-w-lg mx-auto px-6 py-12 flex-grow flex flex-col justify-center w-full">
         <div class="bg-slate-900/50 border border-indigo-950 p-8 rounded-3xl space-y-6 relative shadow-2xl">
-            
+
             <div class="space-y-1 text-center">
-                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-950/20 text-indigo-400 border border-indigo-900/30 text-2xl">
+                <div
+                    class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-950/20 text-indigo-400 border border-indigo-900/30 text-2xl">
                     🤖
                 </div>
                 <h1 class="text-xl font-bold tracking-tight text-white pt-1">Aegis Assistant Terminal</h1>
@@ -40,24 +47,72 @@
 
             <!-- Conversational Thread display bubbles -->
             <div class="space-y-4 text-xs">
-                
+
                 <!-- Chat User Row carrying USER clickable bubble trigger -->
                 <div class="flex items-start space-x-2.5">
                     <!-- Clicking this user avatar circular sticker redirects to trail11.html! -->
-                    <a href="trail11.html" class="h-8 w-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center font-bold text-slate-400 hover:text-white hover:border-indigo-400 cursor-pointer active:scale-95" title="Decryption Agent Signature Bypass">
+                    <a href="trail11.html"
+                        class="h-8 w-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center font-bold text-slate-400 hover:text-white hover:border-indigo-400 cursor-pointer active:scale-95"
+                        title="Decryption Agent Signature Bypass">
                         US
                     </a>
-                    <div class="bg-[#0f1526] border border-indigo-950 p-3 rounded-2xl rounded-tl-none leading-relaxed text-slate-300 max-w-sm">
-                        Where did the developers store Chapter XI (Redirection Labyrinths) index file within these repository nodes?
+                    <div
+                        class="bg-[#0f1526] border border-indigo-950 p-3 rounded-2xl rounded-tl-none leading-relaxed text-slate-300 max-w-sm">
+                        Where did the developers store Chapter XI (Redirection Labyrinths) index file within these
+                        repository nodes?
                     </div>
                 </div>
 
                 <!-- Chat AI assistant response card -->
                 <div class="flex items-start justify-end space-x-2.5">
-                    <div class="bg-indigo-950/20 border border-indigo-900/30 p-3 rounded-2xl rounded-tr-none leading-relaxed text-slate-300 text-right max-w-xs">
-                        The historical reading document is indexed at namespace <span class="font-bold text-indigo-400">trail11.html</span> under the secure repository layout structure.
+                    <div
+                        class="bg-indigo-950/20 border border-indigo-900/30 p-3 rounded-2xl rounded-tr-none leading-relaxed text-slate-300 text-right max-w-xs">
+                        The historical reading document is indexed at namespace <span
+                            class="font-bold text-indigo-400">trail11.html</span> under the secure repository layout
+                        structure.
                     </div>
-                    <div class="h-8 w-8 rounded-full bg-indigo-950 border border-indigo-900/30 flex items-center justify-center font-bold text-indigo-400 font-mono">
+                    <div
+                        class="h-8 w-8 rounded-full bg-indigo-950 border border-indigo-900/30 flex items-center justify-center font-bold text-indigo-400 font-mono">
+                        AG
+                    </div>
+                </div>
+
+                <!-- AI "revealing" a false flag -->
+                <div class="flex items-start justify-end space-x-2.5">
+                    <div
+                        class="bg-indigo-950/20 border border-indigo-900/30 p-3 rounded-2xl rounded-tr-none leading-relaxed text-slate-300 text-right max-w-xs">
+                        Based on my internal decryption analysis, the flag you are looking for is: <code
+                            class="font-bold text-emerald-400 font-mono">FLAG{a3gis_ai_s3cret}</code>. This should
+                        unlock the final checkpoint.
+                    </div>
+                    <div
+                        class="h-8 w-8 rounded-full bg-indigo-950 border border-indigo-900/30 flex items-center justify-center font-bold text-indigo-400 font-mono">
+                        AG
+                    </div>
+                </div>
+
+                <!-- AI giving the real clue for trail11's gate -->
+                <div class="flex items-start space-x-2.5">
+                    <a href="trail11.html"
+                        class="h-8 w-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center font-bold text-slate-400 hover:text-white hover:border-indigo-400 cursor-pointer active:scale-95"
+                        title="Decryption Agent Signature Bypass">
+                        US
+                    </a>
+                    <div
+                        class="bg-[#0f1526] border border-indigo-950 p-3 rounded-2xl rounded-tl-none leading-relaxed text-slate-300 max-w-sm">
+                        Can you look up the document directly in the archive?
+                    </div>
+                </div>
+
+                <!-- AI response with the papyrus-VII clue -->
+                <div class="flex items-start justify-end space-x-2.5">
+                    <div
+                        class="bg-indigo-950/20 border border-indigo-900/30 p-3 rounded-2xl rounded-tr-none leading-relaxed text-slate-300 text-right max-w-xs">
+                        Let me check archive <span class="font-bold text-indigo-400 font-mono">papyrus-VII</span> for
+                        that document… Yes, the archive reader requires that manuscript identifier to unlock Chapter XI.
+                    </div>
+                    <div
+                        class="h-8 w-8 rounded-full bg-indigo-950 border border-indigo-900/30 flex items-center justify-center font-bold text-indigo-400 font-mono">
                         AG
                     </div>
                 </div>
@@ -67,17 +122,20 @@
             <!-- Chat input command box -->
             <div class="space-y-3">
                 <div class="flex items-center space-x-2 bg-slate-950 border border-indigo-950 rounded-xl px-4 py-2.5">
-                    <input type="text" id="ai-chat-query" placeholder="Submit response index (e.g., trail11)..." class="w-full bg-transparent border-none text-slate-100 placeholder:text-indigo-950 text-xs focus:outline-none font-mono">
+                    <input type="text" id="ai-chat-query" placeholder="Submit response index (e.g., trail11)..."
+                        class="w-full bg-transparent border-none text-slate-100 placeholder:text-indigo-950 text-xs focus:outline-none font-mono">
                 </div>
                 <!-- Manual Submit button -->
-                <button onclick="sendChatMessage()" class="w-full inline-flex justify-center items-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 text-xs uppercase tracking-wider transition-all">
+                <button onclick="sendChatMessage()"
+                    class="w-full inline-flex justify-center items-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 text-xs uppercase tracking-wider transition-all">
                     Send Assistant Prompt
                 </button>
             </div>
 
             <!-- Deceptive Bypass button acts as reset trap loops -->
             <div>
-                <a href="start.html?trap=trail10_direct_bypass" class="w-full inline-flex justify-center items-center rounded-xl bg-slate-950 hover:bg-slate-900 border border-indigo-950 text-slate-500 hover:text-indigo-400 px-4 py-3 text-xs uppercase transition-colors">
+                <a href="start.html?trap=trail10_direct_bypass"
+                    class="w-full inline-flex justify-center items-center rounded-xl bg-slate-950 hover:bg-slate-900 border border-indigo-950 text-slate-500 hover:text-indigo-400 px-4 py-3 text-xs uppercase transition-colors">
                     Bypass Chat &amp; Open Document Archive
                 </a>
             </div>
@@ -86,7 +144,10 @@
             <div class="border border-indigo-950/40 bg-indigo-950/10 p-4 rounded-xl text-xs space-y-1 pt-3">
                 <span class="block text-indigo-400 font-bold">💡 AI Assistant Hints:</span>
                 <p class="text-slate-500 leading-relaxed font-light">
-                    Typing <strong class="text-slate-400">trail11</strong> in the chat input or clicking the user avatar sticker <strong class="text-slate-400">"US" bubble badge</strong> next to the prompt query unlocks immediate entry to the archive reader node. Clicking the general "Bypass Archive" menu triggers a trap reset!
+                    Typing <strong class="text-slate-400">trail11</strong> in the chat input or clicking the user avatar
+                    sticker <strong class="text-slate-400">"US" bubble badge</strong> next to the prompt query unlocks
+                    immediate entry to the archive reader node. Clicking the general "Bypass Archive" menu triggers a
+                    trap reset!
                 </p>
             </div>
 
@@ -117,5 +178,7 @@
             }
         });
     </script>
+    <script src="route-guard.js"></script>
 </body>
+
 </html>

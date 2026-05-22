@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gateway Decrypted - CTF Success</title>
     <!-- Tailwind CSS is used under a public CDN for static CTF visual styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Fira Code', monospace;
         }
+
         .mono-font {
             font-family: 'JetBrains Mono', monospace;
         }
+
         @keyframes scanline {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
         }
+
         .scanline {
             animation: scanline 8s linear infinite;
         }
+
         @keyframes pulse-ring {
-            0% { transform: scale(0.95); opacity: 0.5; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(0.95); opacity: 0.5; }
+            0% {
+                transform: scale(0.95);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0.5;
+            }
         }
+
         .terminal-pulse {
             animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
     </style>
 </head>
-<body class="bg-[#05070c] text-emerald-400 min-h-full flex flex-col justify-between relative overflow-hidden selection:bg-emerald-500/30">
+
+<body
+    class="bg-[#05070c] text-emerald-400 min-h-full flex flex-col justify-between relative overflow-hidden selection:bg-emerald-500/30">
 
     <!-- CRITICAL: Subtle Scanline/Terminal effect -->
-    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/[0.02] to-transparent scanline z-20"></div>
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)] z-10"></div>
+    <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/[0.02] to-transparent scanline z-20">
+    </div>
+    <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)] z-10">
+    </div>
 
     <!-- Header info panel -->
     <header class="border-b border-emerald-950/60 bg-[#080d15]/85 px-6 py-4 z-30">
@@ -50,10 +80,12 @@
 
     <!-- Main Cryptographic Terminal Decrypting Sequence -->
     <main class="flex-grow flex flex-col items-center justify-center px-6 py-12 z-30 relative w-full">
-        <div class="max-w-xl w-full space-y-8 bg-[#080c14]/90 border border-emerald-900/40 p-8 rounded-2xl shadow-[0_0_50px_rgba(16,185,129,0.1)] relative overflow-hidden">
-            
+        <div
+            class="max-w-xl w-full space-y-8 bg-[#080c14]/90 border border-emerald-900/40 p-8 rounded-2xl shadow-[0_0_50px_rgba(16,185,129,0.1)] relative overflow-hidden">
+
             <!-- Terminal title design bar -->
-            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-400 to-emerald-600"></div>
+            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-400 to-emerald-600">
+            </div>
 
             <!-- Terminal Decrypt Loader State (Simulated) -->
             <div id="loading-state" class="space-y-6">
@@ -63,8 +95,9 @@
                     </p>
                     <p class="text-base text-slate-300">Evaluating Redirection Integrity...</p>
                 </div>
-                
-                <div class="bg-[#04060b] border border-emerald-950 p-4 rounded-lg space-y-2 text-xs text-emerald-500/95 leading-relaxed overflow-x-auto selection:text-white max-h-56 overflow-y-auto">
+
+                <div
+                    class="bg-[#04060b] border border-emerald-950 p-4 rounded-lg space-y-2 text-xs text-emerald-500/95 leading-relaxed overflow-x-auto selection:text-white max-h-56 overflow-y-auto">
                     <div>$ tracepath --complete -n start.html</div>
                     <div class="text-emerald-800">Route resolution logs:</div>
                     <div class="text-emerald-750 font-bold ml-2">Hop 1: [start.html] -> Origin web design [OK]</div>
@@ -79,10 +112,12 @@
                     <div class="text-emerald-600/70 ml-2">Hop 10: [trail10.html] -> Aegis chat simulation [OK]</div>
                     <div class="text-emerald-600/70 ml-2">Hop 11: [trail11.html] -> Chapter XI text archive [OK]</div>
                     <div class="text-emerald-600/70 ml-2">Hop 12: [trail12.html] -> OS system updates patch [OK]</div>
-                    <div class="text-emerald-500 ml-2">Hop 13: [end.html] -> Gateway secure decryption [RESOLVING...]</div>
-                    
+                    <div class="text-emerald-500 ml-2">Hop 13: [end.html] -> Gateway secure decryption [RESOLVING...]
+                    </div>
+
                     <div class="mt-2 text-white flex items-center gap-2">
-                        <span id="loading-spinner" class="inline-block animate-spin">⚡</span> <span id="log-text">Initializing digital key exchange...</span>
+                        <span id="loading-spinner" class="inline-block animate-spin">⚡</span> <span
+                            id="log-text">Initializing digital key exchange...</span>
                     </div>
                 </div>
 
@@ -90,38 +125,49 @@
                 <div class="space-y-2">
                     <div id="load-status" class="text-xs text-right text-emerald-600">DECRYPTING CODES: 0%</div>
                     <div class="w-full bg-emerald-950/40 rounded-full h-2 overflow-hidden border border-emerald-950">
-                        <div id="decrypt-progress" class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%;"></div>
+                        <div id="decrypt-progress"
+                            class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-2 rounded-full transition-all duration-300 ease-out"
+                            style="width: 0%;"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Decryption Success State (Hidden initially, shown by JS) -->
             <div id="success-state" class="hidden space-y-8 text-center animate-[fadeIn_0.5s_ease-out]">
-                
+
                 <!-- Success icon banner -->
-                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                <div
+                    class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
                     <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
                     </svg>
                 </div>
 
                 <div class="space-y-2">
                     <h2 class="text-2xl font-bold tracking-tight text-white uppercase">Decryption Complete</h2>
-                    <p class="text-sm text-slate-400">Congratulations. You successfully integrated the 13-node redirect labyrinth checkpoints!</p>
+                    <p class="text-sm text-slate-400">Congratulations. You successfully integrated the 13-node redirect
+                        labyrinth checkpoints!</p>
                 </div>
 
                 <!-- Display Flag block of actual text -->
-                <div class="relative bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-5 overflow-hidden group shadow-[0_0_30px_rgba(16,185,129,0.05)]">
-                    <div class="absolute top-2 left-3 text-emerald-800 text-[10px] uppercase font-bold tracking-widest">Decrypted Flag</div>
-                    <div class="absolute top-2 right-3 text-emerald-800 text-[10px] uppercase font-bold tracking-widest select-none">SHA_MATCH</div>
-                    
-                    <div class="mt-4 text-emerald-300 font-bold text-lg md:text-xl font-mono tracking-wide break-all py-2 selection:bg-emerald-500 selection:text-black">
+                <div
+                    class="relative bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-5 overflow-hidden group shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+                    <div class="absolute top-2 left-3 text-emerald-800 text-[10px] uppercase font-bold tracking-widest">
+                        Decrypted Flag</div>
+                    <div
+                        class="absolute top-2 right-3 text-emerald-800 text-[10px] uppercase font-bold tracking-widest select-none">
+                        SHA_MATCH</div>
+
+                    <div
+                        class="mt-4 text-emerald-300 font-bold text-lg md:text-xl font-mono tracking-wide break-all py-2 selection:bg-emerald-500 selection:text-black">
                         FLAG{y0u_followed_th3_tra1l}
                     </div>
                 </div>
 
                 <!-- Success tracking table links -->
-                <div class="divide-y divide-emerald-950/40 border border-emerald-950/60 p-4 rounded-xl bg-[#04060a] text-xs text-left text-slate-400 space-y-2.5">
+                <div
+                    class="divide-y divide-emerald-950/40 border border-emerald-950/60 p-4 rounded-xl bg-[#04060a] text-xs text-left text-slate-400 space-y-2.5">
                     <div class="flex justify-between items-center pb-2">
                         <span>Checkpoints Traversed:</span>
                         <span class="text-emerald-400 font-bold">13 / 13 Hops Completed</span>
@@ -141,7 +187,8 @@
                 </div>
 
                 <div class="flex gap-4">
-                    <a href="start.html" class="flex-1 inline-flex justify-center items-center rounded-xl bg-emerald-950/30 hover:bg-emerald-950/50 border border-emerald-900/60 px-4 py-3 text-xs font-semibold text-emerald-300 uppercase font-mono transition-all">
+                    <a href="start.html"
+                        class="flex-1 inline-flex justify-center items-center rounded-xl bg-emerald-950/30 hover:bg-emerald-950/50 border border-emerald-900/60 px-4 py-3 text-xs font-semibold text-emerald-300 uppercase font-mono transition-all">
                         Reset Labyrinth Loops
                     </a>
                 </div>
@@ -157,9 +204,53 @@
         </p>
     </footer>
 
+    <!-- Decryption Key Gate Overlay -->
+    <div id="gate-overlay" class="fixed inset-0 z-50 bg-[#05070c] flex items-center justify-center">
+        <div class="max-w-md w-full mx-4 space-y-6 text-center">
+            <div
+                class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/30 text-3xl">
+                🔐
+            </div>
+            <h2 class="text-xl font-bold text-emerald-400 uppercase tracking-wider font-mono">Enter Decryption Key</h2>
+            <p class="text-xs text-emerald-700 font-mono">The final gate requires the decryption key to unlock the flag
+            </p>
+            <div class="space-y-3">
+                <input type="text" id="gate-password" placeholder="ENTER DECRYPTION KEY..."
+                    class="w-full bg-[#04060b] border border-emerald-950 text-emerald-300 rounded-xl px-4 py-3 text-sm font-mono text-center focus:outline-none focus:ring-1 focus:ring-emerald-500 tracking-widest"
+                    autofocus>
+                <div id="gate-error" class="hidden text-red-500 text-xs font-bold font-mono animate-pulse">DECRYPTION
+                    FAILED — INVALID KEY</div>
+                <button onclick="checkGate()"
+                    class="w-full inline-flex justify-center items-center rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 text-xs uppercase tracking-wider transition-all">
+                    Decrypt
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Simulated code resolver -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // Gate logic
+        function checkGate() {
+            const pw = document.getElementById('gate-password').value.trim();
+            if (pw === 'LABYRINTH') {
+                const overlay = document.getElementById('gate-overlay');
+                overlay.style.transition = 'opacity 0.5s ease-out';
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.remove();
+                    startDecryption();
+                }, 500);
+            } else {
+                document.getElementById('gate-error').classList.remove('hidden');
+                setTimeout(() => document.getElementById('gate-error').classList.add('hidden'), 2000);
+            }
+        }
+        document.getElementById('gate-password').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') checkGate();
+        });
+
+        function startDecryption() {
             const decryptProgress = document.getElementById('decrypt-progress');
             const loadStatus = document.getElementById('load-status');
             const logText = document.getElementById('log-text');
@@ -199,15 +290,15 @@
                 } else {
                     decryptProgress.style.width = `${progress}%`;
                     loadStatus.textContent = `DECRYPTING CODES: ${progress}%`;
-                    
-                    // Rotate log statements sequentially as progress updates
                     const logIndex = Math.floor((progress / 100) * logs.length);
                     if (logs[logIndex]) {
                         logText.textContent = logs[logIndex];
                     }
                 }
             }, 100);
-        });
+        }
     </script>
+    <script src="route-guard.js"></script>
 </body>
+
 </html>
